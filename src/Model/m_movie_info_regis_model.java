@@ -14,7 +14,6 @@ import java.sql.SQLException;
  * @author tjdck
  */
 public class m_movie_info_regis_model {
-    DBConnection dbConn = new DBConnection();
     int number;
     String moviename;
     String runtime;
@@ -28,7 +27,6 @@ public class m_movie_info_regis_model {
             this.moviename=moviename;
     }
     public  m_movie_info_regis_model(String moviename, String runtime, String age,String dirctor,String actor,String category,String releaseday){
-        dbConn.connect();
         this.actor=actor;
         this.age=Integer.parseInt(age);
         this.category=category;
@@ -43,7 +41,7 @@ public class m_movie_info_regis_model {
 		//ResultSet rs = null;
 		try {
                          String SQL = "insert into customers(moviename, runtime, age, dirctor, actor,category,releaseday) values(?, ?, ?, ?, ?,?,?)";
-                         pstmt = dbConn.connection.prepareStatement(SQL);
+                         
                             pstmt.setString(1, moviename);
                             pstmt.setString(2, runtime);
                             pstmt.setInt(3, age);

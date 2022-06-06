@@ -4,6 +4,16 @@
  */
 package View;
 
+import Controller.Sign_up_controller;
+import Controller.m_movie_info_regis_controller;
+import Controller.u_Food_controller;
+import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import Model.Login_model;
+import Model.food_model;
+
 /**
  *
  * @author kms50
@@ -18,6 +28,115 @@ public class u_Food_view extends javax.swing.JDialog {
         initComponents();
     }
 
+    public String getBubbleteacombo() {
+        return bubbleteacombo.getSelectedItem().toString();
+    }
+
+    public String getCoconat() {
+        return coconat.getSelectedItem().toString();
+    }
+
+    public String getCoffecombo() {
+        return coffecombo.getSelectedItem().toString();
+    }
+
+    public String getDeepcheesesouce() {
+        return deepcheesesouce.getSelectedItem().toString();
+    }
+
+    public String getHotdogcombo() {
+        return hotdogcombo.getSelectedItem().toString();
+    }
+
+    public String getIce() {
+        return ice.getSelectedItem().toString();
+    }
+
+    public String getMilk() {
+        return milk.getSelectedItem().toString();
+    }
+    public String getNachocombo() {
+        return nachocombo.getSelectedItem().toString();
+    }
+    public String getOnean() {
+        return onean.getSelectedItem().toString();
+    }
+    public String getPeal() {
+        return peal.getSelectedItem().toString();
+    }
+    public String getPick() {
+        return pick.getSelectedItem().toString();
+    }
+    public String getPopcorncombo() {
+        return popcorncombo.getSelectedItem().toString();
+    }
+    public String getSalsasouce() {
+        return salsasouce.getSelectedItem().toString();
+    }
+
+    public String getShot() {
+        return shot.getSelectedItem().toString();
+    }
+
+    public String getSodacombo() {
+        return sodacombo.getSelectedItem().toString();
+    }
+
+    public String getSosege() {
+        return sosege.getSelectedItem().toString();
+    }
+
+    public String getSouce() {
+        return souce.getSelectedItem().toString();
+    }
+
+    public String getSuger() {
+        return suger.getSelectedItem().toString();
+    }
+
+    public String getTastepopcorn() {
+        return tastepopcorn.getSelection().getActionCommand();
+    }
+    public String getWhitepeal() {
+        return whitepeal.getSelectedItem().toString();
+    }
+    public void setaddActionListener(ActionListener listener) {
+		addpopcorn.addActionListener(listener);
+                addsoda.addActionListener(listener);
+                addhotdog.addActionListener(listener);
+                addbubbletea.addActionListener(listener);
+                addcoffe.addActionListener(listener);
+                addnacho.addActionListener(listener);
+		exitbtn.addActionListener(listener);
+                orderbtn.addActionListener(listener);
+                deletebtn.addActionListener(listener);
+    }
+    public u_Food_view() {
+        initComponents();
+        //팝콘salsasouce
+        //salsasouce.getSelectedIndex()
+       /* sweet.setSelected(true);
+        tastepopcorn.getSelection();
+        String tastereturn = tastepopcorn.getSelection().getActionCommand();
+        u_Food_controller popcorn_controller = new u_Food_controller(addpopcorn,tastereturn,popcorncombo);
+        addpopcorn.addActionListener(popcorn_controller);
+        //나초
+        u_Food_controller nacho_controller = new u_Food_controller(addnacho,salsasouce,deepcheesesouce,nachocombo);
+        addnacho.addActionListener(popcorn_controller);
+        //버플티
+        u_Food_controller bubbletea_controller = new u_Food_controller(addbubbletea,suger,peal,whitepeal,coconat,bubbleteacombo);
+        addbubbletea.addActionListener(popcorn_controller);
+        //소다
+        u_Food_controller soda_controller = new u_Food_controller(addsoda,tastereturn,sodacombo);
+        addsoda.addActionListener(popcorn_controller);
+        //커피
+        u_Food_controller coffe_controller = new u_Food_controller(addcoffe,milk,ice,shot,coffecombo);
+        addcoffe.addActionListener(popcorn_controller);
+        //핫도그
+        u_Food_controller hotdog_controller = new u_Food_controller(addhotdog,sosege,pick,onean,souce,hotdogcombo);
+        addhotdog.addActionListener(popcorn_controller);*/
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,30 +146,71 @@ public class u_Food_view extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tastepopcorn = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        addpopcorn = new javax.swing.JButton();
+        popcorncombo = new javax.swing.JComboBox<>();
+        sweet = new javax.swing.JRadioButton();
+        savory = new javax.swing.JRadioButton();
+        jLabel24 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        addnacho = new javax.swing.JButton();
+        nachocombo = new javax.swing.JComboBox<>();
+        deepcheesesouce = new javax.swing.JComboBox<>();
+        salsasouce = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        addhotdog = new javax.swing.JButton();
+        hotdogcombo = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        sosege = new javax.swing.JComboBox<>();
+        pick = new javax.swing.JComboBox<>();
+        onean = new javax.swing.JComboBox<>();
+        souce = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        addsoda = new javax.swing.JButton();
+        sodacombo = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        addbubbletea = new javax.swing.JButton();
+        bubbleteacombo = new javax.swing.JComboBox<>();
+        coconat = new javax.swing.JComboBox<>();
+        whitepeal = new javax.swing.JComboBox<>();
+        peal = new javax.swing.JComboBox<>();
+        suger = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        addcoffe = new javax.swing.JButton();
+        coffecombo = new javax.swing.JComboBox<>();
+        ice = new javax.swing.JComboBox<>();
+        milk = new javax.swing.JComboBox<>();
+        shot = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        menutable = new javax.swing.JTable();
+        orderbtn = new javax.swing.JButton();
+        exitbtn = new javax.swing.JButton();
+        deletebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,32 +219,68 @@ public class u_Food_view extends javax.swing.JDialog {
 
         jLabel1.setText("Popcorn 5000$");
 
-        jButton4.setText("담기");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        addpopcorn.setText("팝콘 담기");
+        addpopcorn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                addpopcornActionPerformed(evt);
             }
         });
+
+        popcorncombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1개", "2개", "3개", "4개" }));
+        popcorncombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popcorncomboActionPerformed(evt);
+            }
+        });
+
+        tastepopcorn.add(sweet);
+        sweet.setText("스윗");
+        sweet.setActionCommand("sweet");
+
+        tastepopcorn.add(savory);
+        savory.setText("고소");
+        savory.setActionCommand("savory");
+
+        jLabel24.setText("수 량");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addpopcorn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(44, 44, 44))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(savory)
+                            .addComponent(sweet))
+                        .addGap(16, 16, 16))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(popcorncombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addComponent(sweet)
+                .addGap(1, 1, 1)
+                .addComponent(savory)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(popcorncombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addpopcorn))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
@@ -92,32 +288,81 @@ public class u_Food_view extends javax.swing.JDialog {
 
         jLabel2.setText("Nacho 4000$");
 
-        jButton5.setText("담기");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        addnacho.setText("나쵸 담기");
+        addnacho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                addnachoActionPerformed(evt);
             }
         });
+
+        nachocombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1개", "2개", "3개", "4개" }));
+
+        deepcheesesouce.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        deepcheesesouce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deepcheesesouceActionPerformed(evt);
+            }
+        });
+
+        salsasouce.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        salsasouce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salsasouceActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("수 량");
+
+        jLabel11.setText("살사 소스");
+
+        jLabel12.setText("딥치즈 소스");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addnacho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(53, 53, 53))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nachocombo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel11))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(salsasouce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(deepcheesesouce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(salsasouce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deepcheesesouce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nachocombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addnacho))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 204));
@@ -125,32 +370,118 @@ public class u_Food_view extends javax.swing.JDialog {
 
         jLabel3.setText("Hot dog 3000$");
 
-        jButton6.setText("담기");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        addhotdog.setText("핫도그 담기");
+        addhotdog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                addhotdogActionPerformed(evt);
             }
         });
+
+        hotdogcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1개", "2개", "3개", "4개" }));
+        hotdogcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hotdogcomboActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("수 량");
+
+        sosege.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+
+        pick.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        pick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pickActionPerformed(evt);
+            }
+        });
+
+        onean.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+
+        souce.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        souce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                souceActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("피  클");
+
+        jLabel13.setText("소세지");
+
+        jLabel15.setText("양  파");
+
+        jLabel16.setText("소  스");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addhotdog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sosege, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(pick, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(onean, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(souce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hotdogcombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sosege, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(onean, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(souce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hotdogcombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addhotdog))
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 204, 204));
@@ -158,26 +489,38 @@ public class u_Food_view extends javax.swing.JDialog {
 
         jLabel4.setText("Soda 2000$");
 
-        jButton7.setText("담기");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        addsoda.setText("음료 담기");
+        addsoda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                addsodaActionPerformed(evt);
             }
         });
+
+        sodacombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1개", "2개", "3개", "4개", " " }));
+        sodacombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sodacomboActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("수 량");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addComponent(addsoda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(54, 54, 54))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(sodacombo, 0, 120, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,8 +528,11 @@ public class u_Food_view extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addContainerGap())
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sodacombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addsoda))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
@@ -194,22 +540,86 @@ public class u_Food_view extends javax.swing.JDialog {
 
         jLabel5.setText("Bubble Tea 3000$");
 
-        jButton8.setText("담기");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        addbubbletea.setText("버블티 담기");
+        addbubbletea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                addbubbleteaActionPerformed(evt);
             }
         });
+
+        bubbleteacombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1개", "2개", "3개", "4개", " " }));
+        bubbleteacombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bubbleteacomboActionPerformed(evt);
+            }
+        });
+
+        coconat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        coconat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coconatActionPerformed(evt);
+            }
+        });
+
+        whitepeal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+
+        peal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        peal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pealActionPerformed(evt);
+            }
+        });
+
+        suger.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+
+        jLabel9.setText("수 량");
+
+        jLabel18.setText("펄");
+
+        jLabel20.setText("코코넛");
+
+        jLabel19.setText("화이트펄");
+
+        jLabel17.setText("설  탕");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addbubbletea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bubbleteacombo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel17)
+                                        .addGroup(jPanel6Layout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(jLabel18)))
+                                    .addComponent(jLabel19))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(whitepeal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(peal, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(suger, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel5))
+                                    .addComponent(jLabel20))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(coconat, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -218,8 +628,28 @@ public class u_Food_view extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton8)
-                .addContainerGap())
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(suger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(peal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(whitepeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(coconat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20)))
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bubbleteacombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addbubbletea))
         );
 
         jPanel7.setBackground(new java.awt.Color(255, 204, 204));
@@ -227,37 +657,98 @@ public class u_Food_view extends javax.swing.JDialog {
 
         jLabel6.setText("Coffe 3000$");
 
-        jButton9.setText("담기");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        addcoffe.setText("커피 담기");
+        addcoffe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                addcoffeActionPerformed(evt);
             }
         });
+
+        coffecombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1개", "2개", "3개", "4개", " " }));
+        coffecombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coffecomboActionPerformed(evt);
+            }
+        });
+
+        ice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+
+        milk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        milk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                milkActionPerformed(evt);
+            }
+        });
+
+        shot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "추가안함", "1개", "2개", "3개", "4개" }));
+        shot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shotActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("수 량");
+
+        jLabel23.setText("샷 추가");
+
+        jLabel21.setText("우  유");
+
+        jLabel22.setText("얼  음");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addcoffe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(53, 53, 53))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(coffecombo, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ice, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(milk, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(shot, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addComponent(jButton9)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(milk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(shot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(coffecombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addcoffe))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        menutable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -265,19 +756,27 @@ public class u_Food_view extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "메뉴", "수량", "가격", "추가항목"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
 
-        jButton1.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
-        jButton1.setText("Order");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(menutable);
 
-        jButton2.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
-        jButton2.setText("Exit");
+        orderbtn.setFont(new java.awt.Font("맑은 고딕", 0, 18)); // NOI18N
+        orderbtn.setText("Order");
 
-        jButton3.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
-        jButton3.setText("Delete");
+        exitbtn.setFont(new java.awt.Font("맑은 고딕", 0, 18)); // NOI18N
+        exitbtn.setText("Exit");
+
+        deletebtn.setFont(new java.awt.Font("맑은 고딕", 0, 18)); // NOI18N
+        deletebtn.setText("Delete");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -290,9 +789,9 @@ public class u_Food_view extends javax.swing.JDialog {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(deletebtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                            .addComponent(orderbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(exitbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(25, 25, 25))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -303,10 +802,10 @@ public class u_Food_view extends javax.swing.JDialog {
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,19 +820,18 @@ public class u_Food_view extends javax.swing.JDialog {
                     .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(orderbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(deletebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))))
+                        .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -352,29 +850,81 @@ public class u_Food_view extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void addpopcornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpopcornActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_addpopcornActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void addnachoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addnachoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_addnachoActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void addhotdogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addhotdogActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_addhotdogActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void addsodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addsodaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_addsodaActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void addbubbleteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbubbleteaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_addbubbleteaActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void addcoffeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcoffeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_addcoffeActionPerformed
+
+    private void popcorncomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popcorncomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popcorncomboActionPerformed
+
+    private void sodacomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sodacomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sodacomboActionPerformed
+
+    private void bubbleteacomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bubbleteacomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bubbleteacomboActionPerformed
+
+    private void coffecomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coffecomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coffecomboActionPerformed
+
+    private void hotdogcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotdogcomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hotdogcomboActionPerformed
+
+    private void deepcheesesouceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deepcheesesouceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deepcheesesouceActionPerformed
+
+    private void pickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pickActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pickActionPerformed
+
+    private void souceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_souceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_souceActionPerformed
+
+    private void pealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pealActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pealActionPerformed
+
+    private void coconatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coconatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coconatActionPerformed
+
+    private void milkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_milkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_milkActionPerformed
+
+    private void shotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_shotActionPerformed
+
+    private void salsasouceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salsasouceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salsasouceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,34 +956,60 @@ public class u_Food_view extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                u_Food_view dialog = new u_Food_view(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                u_Food_view view = new u_Food_view(new javax.swing.JFrame(), true);
+		food_model model = new food_model();
+		u_Food_controller controller = new u_Food_controller(view, model);
+                view.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
-                dialog.setVisible(true);
+                view.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    public javax.swing.JButton addbubbletea;
+    public javax.swing.JButton addcoffe;
+    public javax.swing.JButton addhotdog;
+    public javax.swing.JButton addnacho;
+    public javax.swing.JButton addpopcorn;
+    public javax.swing.JButton addsoda;
+    private javax.swing.JComboBox<String> bubbleteacombo;
+    private javax.swing.JComboBox<String> coconat;
+    private javax.swing.JComboBox<String> coffecombo;
+    private javax.swing.JComboBox<String> deepcheesesouce;
+    public javax.swing.JButton deletebtn;
+    public javax.swing.JButton exitbtn;
+    private javax.swing.JComboBox<String> hotdogcombo;
+    private javax.swing.JComboBox<String> ice;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -441,7 +1017,24 @@ public class u_Food_view extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable menutable;
+    private javax.swing.JComboBox<String> milk;
+    private javax.swing.JComboBox<String> nachocombo;
+    private javax.swing.JComboBox<String> onean;
+    public javax.swing.JButton orderbtn;
+    private javax.swing.JComboBox<String> peal;
+    private javax.swing.JComboBox<String> pick;
+    private javax.swing.JComboBox<String> popcorncombo;
+    private javax.swing.JComboBox<String> salsasouce;
+    private javax.swing.JRadioButton savory;
+    private javax.swing.JComboBox<String> shot;
+    private javax.swing.JComboBox<String> sodacombo;
+    private javax.swing.JComboBox<String> sosege;
+    private javax.swing.JComboBox<String> souce;
+    private javax.swing.JComboBox<String> suger;
+    private javax.swing.JRadioButton sweet;
+    public javax.swing.ButtonGroup tastepopcorn;
+    private javax.swing.JComboBox<String> whitepeal;
     // End of variables declaration//GEN-END:variables
 }

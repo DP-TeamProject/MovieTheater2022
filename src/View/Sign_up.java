@@ -1,8 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
+
 package View;
+
+import Controller.Login_controller;
+import Controller.Sign_up_controller;
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+import Model.Login_model;
 
 /**
  *
@@ -18,8 +21,33 @@ public class Sign_up extends javax.swing.JDialog {
         initComponents();
     }
 
+    public String getBirthday() {
+        return birthday.getText();
+    }
+
+    public String getId() {
+        return id.getText();
+    }
+
+    public String getNamefiled() {
+        return name.getText();
+    }
+
+    public String getPhonenumber() {
+        return phonenumber.getText();
+    }
+
+    public String getPw() {
+        return pw.getText();
+    }
     public Sign_up() {
         initComponents();
+        Sign_up_controller okbtn_controller = new Sign_up_controller(okbtn,id,pw,name,birthday,phonenumber); //로그인 버튼
+        okbtn.addActionListener(okbtn_controller);
+    }
+    public void setaddActionListener(ActionListener listener) {
+		cancel.addActionListener(listener);
+		okbtn.addActionListener(listener);
     }
 
     /**
@@ -34,18 +62,18 @@ public class Sign_up extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        user_id = new javax.swing.JTextField();
-        password = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
+        pw = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        phone_num = new javax.swing.JTextField();
+        phonenumber = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        signup = new javax.swing.JButton();
+        okbtn = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        birth = new javax.swing.JTextField();
+        birthday = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -57,7 +85,7 @@ public class Sign_up extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("맑은 고딕", 0, 13)); // NOI18N
         jLabel3.setText("아이디");
 
-        user_id.setToolTipText("");
+        id.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("맑은 고딕", 0, 13)); // NOI18N
         jLabel4.setText("비밀번호");
@@ -74,11 +102,10 @@ public class Sign_up extends javax.swing.JDialog {
         jLabel8.setFont(new java.awt.Font("맑은 고딕", 0, 11)); // NOI18N
         jLabel8.setText("※ ' - ' 없이 숫자만 입력해주세요.");
 
-        signup.setText("확인");
+        okbtn.setText("확인");
+        okbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         cancel.setText("취소");
-
-        birth.setText("생년월일 6자리 입력해주세요");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +121,7 @@ public class Sign_up extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
-                        .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
                         .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -107,11 +134,11 @@ public class Sign_up extends javax.swing.JDialog {
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(birth, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(phone_num, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(birthday, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(phonenumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                                 .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(user_id, javax.swing.GroupLayout.Alignment.LEADING)))))
+                                .addComponent(pw, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(id, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -124,31 +151,33 @@ public class Sign_up extends javax.swing.JDialog {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(birth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(birthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phone_num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39))
         );
+
+        okbtn.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,21 +212,24 @@ public class Sign_up extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Sign_up dialog = new Sign_up(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                Sign_up view = new Sign_up(new javax.swing.JFrame(), true);
+		Login_model model = new Login_model();
+		Sign_up_controller controller = new Sign_up_controller(view, model);
+                view.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
-                dialog.setVisible(true);
+                view.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField birth;
-    private javax.swing.JButton cancel;
+    private javax.swing.JTextField birthday;
+    public javax.swing.JButton cancel;
+    private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -207,9 +239,8 @@ public class Sign_up extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField name;
-    private javax.swing.JTextField password;
-    private javax.swing.JTextField phone_num;
-    private javax.swing.JButton signup;
-    private javax.swing.JTextField user_id;
+    public javax.swing.JButton okbtn;
+    private javax.swing.JTextField phonenumber;
+    private javax.swing.JTextField pw;
     // End of variables declaration//GEN-END:variables
 }

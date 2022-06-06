@@ -4,7 +4,14 @@
  */
 package View;
 
+import Controller.m_Coupon_regis_controller;
 import Controller.m_movie_info_regis_controller;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import Model.m_Coupon_model;
+import Model.m_movie_info_regis_model;
 
 /**
  *
@@ -19,10 +26,44 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-    public m_Movie_info_regis() {
+    /*public m_Movie_info_regis() {
         initComponents();
         m_movie_info_regis_controller m_main_view_addcontroller = new m_movie_info_regis_controller(appendmovie,moviename,time,dirctor,actor,releasedate,age,category);
+        m_movie_info_regis_controller m_main_view_cancelcontroller = new m_movie_info_regis_controller(cancel);
         appendmovie.addActionListener(m_main_view_addcontroller);
+        cancel.addActionListener(m_main_view_cancelcontroller);
+    }    */
+
+    public String getActor() {
+        return actor.getText();
+    }
+
+    public String getAge() {
+        return age.getSelectedItem().toString();
+    }
+
+    public String getCategory() {
+        return category.getSelectedItem().toString();
+    }
+
+    public String getDirctor() {
+        return dirctor.getText();
+    }
+
+    public String getMoviename() {
+        return moviename.getText();
+    }
+
+    public String getReleasedate() {
+        return releasedate.getText();
+    }
+
+    public String getTime() {
+        return time.getText();
+    }
+    public void setaddActionListener(ActionListener listener) {
+		cancel.addActionListener(listener);
+		appendmovie.addActionListener(listener);
     }
 
     /**
@@ -48,7 +89,7 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         appendmovie = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
         age = new javax.swing.JComboBox<>();
         category = new javax.swing.JComboBox<>();
         releasedate = new javax.swing.JTextField();
@@ -86,12 +127,12 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
         appendmovie.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
         appendmovie.setText("영화등록");
 
-        jButton2.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
-        jButton2.setText("취소");
+        cancel.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        cancel.setText("취소");
 
-        age.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        age.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Youth", "Adult" }));
 
-        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "액션", "공포", "SF", "로맨스" }));
 
         releasedate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +166,7 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(appendmovie, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(actor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,7 +209,7 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appendmovie, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51))
         );
 
@@ -225,14 +266,16 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                m_Movie_info_regis dialog = new m_Movie_info_regis(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                m_Movie_info_regis view = new m_Movie_info_regis(new javax.swing.JFrame(), true);
+		m_movie_info_regis_model model = new m_movie_info_regis_model();
+		m_movie_info_regis_controller controller = new m_movie_info_regis_controller(view, model);
+                view.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
-                dialog.setVisible(true);
+                view.setVisible(true);
             }
         });
     }
@@ -240,10 +283,10 @@ public class m_Movie_info_regis extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField actor;
     private javax.swing.JComboBox<String> age;
-    private javax.swing.JButton appendmovie;
+    public javax.swing.JButton appendmovie;
+    public javax.swing.JButton cancel;
     private javax.swing.JComboBox<String> category;
     private javax.swing.JTextField dirctor;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

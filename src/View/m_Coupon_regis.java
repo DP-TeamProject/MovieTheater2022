@@ -4,39 +4,35 @@
  */
 package View;
 
-import Controller.Login_controller;
-import Controller.PW_search_controller;
+import Controller.m_Coupon_regis_controller;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import Model.Login_model;
+import Model.m_Coupon_model;
 
 /**
  *
  * @author 915
  */
-public class PW_search extends javax.swing.JDialog {
+public class m_Coupon_regis extends javax.swing.JDialog {
 
     /**
-     * Creates new form PW_search
+     * Creates new form u_Discount_coupon
      */
-    public PW_search(java.awt.Frame parent, boolean modal) {
+    public m_Coupon_regis(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
     }
-    public PW_search() {
-        initComponents();        
+
+    public String getCouponnumber() {
+        return couponnumber.getText();
     }
     public void setaddActionListener(ActionListener listener) {
 		cancel.addActionListener(listener);
 		okbtn.addActionListener(listener);
     }
-    public String getId() {
-        return id.getText();
-    }
-
-    public String getNamefiled() {
-        return namefiled.getText();
+    public m_Coupon_regis() {
+        initComponents();
     }
 
     /**
@@ -49,27 +45,14 @@ public class PW_search extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        id = new javax.swing.JTextField();
-        namefiled = new javax.swing.JTextField();
+        couponnumber = new javax.swing.JTextField();
         okbtn = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        jLabel1.setText("비밀번호 찾기");
-
-        id.setText("이름을 입력해 주세요.");
-
-        namefiled.setText("이름을 입력해 주세요.");
-        namefiled.setToolTipText("아이디를 입력해 주세요.");
-        namefiled.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namefiledActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("등록할 할인권 번호를 입력하세요.");
 
         okbtn.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
         okbtn.setText("확인");
@@ -77,55 +60,40 @@ public class PW_search extends javax.swing.JDialog {
         cancel.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
         cancel.setText("취소");
 
-        jLabel2.setText("아이디를 입력하세요");
-
-        jLabel3.setText("이름을 입력하세요");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
+                .addGap(115, 115, 115)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(okbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancel))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(id)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(namefiled)))
-                .addContainerGap(132, Short.MAX_VALUE))
+                        .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(couponnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(142, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3)
-                .addGap(8, 8, 8)
-                .addComponent(namefiled, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(56, 56, 56)
+                .addComponent(couponnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(okbtn)
-                    .addComponent(cancel))
-                .addGap(47, 47, 47))
+                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void namefiledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namefiledActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namefiledActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,22 +112,23 @@ public class PW_search extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PW_search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(m_Coupon_regis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PW_search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(m_Coupon_regis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PW_search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(m_Coupon_regis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PW_search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(m_Coupon_regis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PW_search view = new PW_search(new javax.swing.JFrame(), true);
-		Login_model model = new Login_model();
-		PW_search_controller controller = new PW_search_controller(view, model);
+                m_Coupon_regis view = new m_Coupon_regis(new javax.swing.JFrame(), true);
+		m_Coupon_model model = new m_Coupon_model();
+		m_Coupon_regis_controller controller = new m_Coupon_regis_controller(view, model);
                 view.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -173,11 +142,8 @@ public class PW_search extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton cancel;
-    public javax.swing.JTextField id;
+    private javax.swing.JTextField couponnumber;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    public javax.swing.JTextField namefiled;
     public javax.swing.JButton okbtn;
     // End of variables declaration//GEN-END:variables
 }

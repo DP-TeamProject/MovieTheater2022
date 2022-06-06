@@ -4,13 +4,13 @@
  */
 package Controller;
 
-//import com.sun.org.apache.bcel.internal.Constants;
+import View.m_Main_view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.table.*;
-import View.*;
 import java.awt.Dimension; 
+import java.awt.Window;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,25 +21,26 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import Model.m_main_view_model;
-import View.m_Main_view;
+import Model.Login_model;
+import Model.m_movie_info_regis_model;
+import View.m_Movie_info_regis;
 
 /**
  *
  * @author tjdck
  */
 public class m_movie_info_regis_controller implements ActionListener{
-    private m_main_view_model model;
-    private m_Main_view mainview;
-    private JTextField movie_name;
-    private JTextField time;
-    private JTextField dirctor;
-    private JTextField actor;
-    private JTextField releasedate;
+    private m_movie_info_regis_model model;
+    private m_Movie_info_regis view;
+    private String movie_name;
+    private String time;
+    private String dirctor;
+    private String actor;
+    private String releasedate;
     private JButton button;
-    private JComboBox age;
-    private JComboBox category;
-    private m_main_view_model mainmodel;
-    public m_movie_info_regis_controller(JButton button,JTextField movie_name,JTextField time,JTextField dirctor,JTextField actor,JTextField releasedate,JComboBox age,JComboBox category) {
+    private String age;
+    private String category;
+    /*public m_movie_info_regis_controller(JButton button,JTextField movie_name,JTextField time,JTextField dirctor,JTextField actor,JTextField releasedate,JComboBox age,JComboBox category) {
         this.button = button;
         this.movie_name = movie_name;
         this.time = time;
@@ -48,12 +49,25 @@ public class m_movie_info_regis_controller implements ActionListener{
         this.releasedate = releasedate;
         this.age = age;
         this.category = category;        
+    }*/
+    public m_movie_info_regis_controller(JButton button) {
+      this.button=button;
+    }
+    public m_movie_info_regis_controller(m_Movie_info_regis view, m_movie_info_regis_model model) {
+       this.view=view;
+       this.model=model;
+       this.view.setaddActionListener(this);
     }
         public void actionPerformed(ActionEvent e) {
-          //  
-            String buttonname = button.getText();
-            switch (buttonname) {
-            case "영화등록": 
-        }
+            if(e.getSource() == view.appendmovie){
+            this.movie_name = view.getMoviename();
+            this.time = view.getTime();
+            this.dirctor = view.getDirctor();
+            this.actor = view.getActor();
+            this.releasedate = view.getReleasedate();
+            this.age = view.getAge();
+            this.category = view.getCategory();
+            //model.appendMovie(movie_name,time,age,dirctor,actor,category,releasedate);
+            }
         }
 }

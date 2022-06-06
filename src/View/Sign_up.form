@@ -35,7 +35,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="signup" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="okbtn" min="-2" pref="88" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="cancel" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
@@ -49,11 +49,11 @@
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="birth" alignment="0" max="32767" attributes="0"/>
-                              <Component id="phone_num" alignment="0" max="32767" attributes="0"/>
+                              <Component id="birthday" alignment="0" max="32767" attributes="0"/>
+                              <Component id="phonenumber" alignment="0" pref="147" max="32767" attributes="0"/>
                               <Component id="name" alignment="0" max="32767" attributes="0"/>
-                              <Component id="password" alignment="0" max="32767" attributes="0"/>
-                              <Component id="user_id" alignment="0" max="32767" attributes="0"/>
+                              <Component id="pw" alignment="0" max="32767" attributes="0"/>
+                              <Component id="id" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -72,28 +72,28 @@
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="user_id" min="-2" max="-2" attributes="0"/>
+              <Component id="id" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="password" min="-2" max="-2" attributes="0"/>
+              <Component id="pw" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="name" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="birth" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Component id="birthday" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="phone_num" min="-2" max="-2" attributes="0"/>
+              <Component id="phonenumber" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="50" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="signup" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="okbtn" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="cancel" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -123,12 +123,12 @@
         <Property name="text" type="java.lang.String" value="&#xc544;&#xc774;&#xb514;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="user_id">
+    <Component class="javax.swing.JTextField" name="id">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="password">
+    <Component class="javax.swing.JTextField" name="pw">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -156,7 +156,7 @@
         <Property name="text" type="java.lang.String" value="&#xcd9c;&#xc0dd;&#xc77c;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="phone_num">
+    <Component class="javax.swing.JTextField" name="phonenumber">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -174,20 +174,29 @@
         <Property name="text" type="java.lang.String" value="&#x203b; &apos; - &apos; &#xc5c6;&#xc774; &#xc22b;&#xc790;&#xb9cc; &#xc785;&#xb825;&#xd574;&#xc8fc;&#xc138;&#xc694;."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="signup">
+    <Component class="javax.swing.JButton" name="okbtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xd655;&#xc778;"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="&#xae30;&#xbcf8; &#xcee4;&#xc11c;"/>
+        </Property>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+      </AccessibilityProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="cancel">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="birth">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#xc0dd;&#xb144;&#xc6d4;&#xc77c; 6&#xc790;&#xb9ac; &#xc785;&#xb825;&#xd574;&#xc8fc;&#xc138;&#xc694;"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="birthday">
     </Component>
   </SubComponents>
 </Form>

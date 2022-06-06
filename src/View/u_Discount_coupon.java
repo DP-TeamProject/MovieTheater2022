@@ -4,15 +4,29 @@
  */
 package View;
 
+import Controller.m_Coupon_regis_controller;
+import Controller.u_Discount_coupon_controller;
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+import Model.m_Coupon_model;
+
 /**
  *
  * @author 915
  */
 public class u_Discount_coupon extends javax.swing.JDialog {
 
+    public String getCouponnumber() {
+        return couponnumber.getText();
+    }
+
     /**
      * Creates new form u_Discount_coupon
      */
+    public void setaddActionListener(ActionListener listener) {
+		cancel.addActionListener(listener);
+		okbtn.addActionListener(listener);
+    }
     public u_Discount_coupon(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -28,16 +42,20 @@ public class u_Discount_coupon extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        couponnumber = new javax.swing.JTextField();
+        okbtn = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         jLabel1.setText("보유중인 할인권 번호를 입력하세요.");
 
-        jButton1.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
-        jButton1.setText("확인");
+        okbtn.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        okbtn.setText("확인");
+
+        cancel.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        cancel.setText("취소");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,10 +68,12 @@ public class u_Discount_coupon extends javax.swing.JDialog {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(couponnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -62,9 +82,11 @@ public class u_Discount_coupon extends javax.swing.JDialog {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1)
                 .addGap(73, 73, 73)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(couponnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(okbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33))
         );
 
@@ -101,21 +123,24 @@ public class u_Discount_coupon extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                u_Discount_coupon dialog = new u_Discount_coupon(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                u_Discount_coupon view = new u_Discount_coupon(new javax.swing.JFrame(), true);
+		m_Coupon_model model = new m_Coupon_model();
+		u_Discount_coupon_controller controller = new u_Discount_coupon_controller(view, model);
+                view.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
-                dialog.setVisible(true);
+                view.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton cancel;
+    private javax.swing.JTextField couponnumber;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JButton okbtn;
     // End of variables declaration//GEN-END:variables
 }
