@@ -4,35 +4,21 @@
  */
 package View;
 
-import Controller.m_Coupon_regis_controller;
 import Controller.m_movie_info_regis_controller;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-import Model.m_Coupon_model;
 import Model.m_movie_info_regis_model;
 
-/**
- *
- * @author 915
- */
+
 public class m_Movie_info_regis extends javax.swing.JDialog {
-    
-    /**
-     * Creates new form m_Movie_info_regis1
-     */
+
     public m_Movie_info_regis(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
-    /*public m_Movie_info_regis() {
-        initComponents();
-        m_movie_info_regis_controller m_main_view_addcontroller = new m_movie_info_regis_controller(appendmovie,moviename,time,dirctor,actor,releasedate,age,category);
-        m_movie_info_regis_controller m_main_view_cancelcontroller = new m_movie_info_regis_controller(cancel);
-        appendmovie.addActionListener(m_main_view_addcontroller);
-        cancel.addActionListener(m_main_view_cancelcontroller);
-    }    */
+
 
     public String getActor() {
         return actor.getText();

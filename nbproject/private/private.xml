@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/Age_Limit.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/SF_movie.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/View/m_Main_view.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/Action_movie.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/food_model.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/movie.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/u_main_model.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Controller/m_main_view_controller.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Controller/Sign_up_controller.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/Category.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Controller/Login_controller.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Controller/PW_search_controller.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/Action.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/makeMovie.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/m_movie_info_regis_model.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/m_main_view_model.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/Youth.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/View/m_Movie_info_regis.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Login_model.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Controller/u_main_view_controller.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Controller/MovieMainApp.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/View/u_Food_view.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/Model/Strategy/Adult.java</file>
+            <file>file:/D:/DesignPattern/MovieTheater/src/View/u_Main_view.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -4,10 +4,6 @@
  */
 package Model;
 
-/**
- *
- * @author tjdck
- */
 public class m_main_view_model {
    public  m_main_view_model(){
        System.out.println("실행");

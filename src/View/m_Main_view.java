@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeListener;
 import Model.m_main_view_model;
+import Model.m_movie_info_regis_model;
 
 /**
  *
@@ -726,7 +727,7 @@ public class m_Main_view extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 m_Main_view view = new m_Main_view(new javax.swing.JFrame(), true);
-                m_main_view_model model = new m_main_view_model();
+                m_movie_info_regis_model model = new m_movie_info_regis_model();
 		m_main_view_controller controller = new m_main_view_controller(view, model);
                 view.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override

@@ -33,11 +33,10 @@ import View.Login;
  */
 public class m_main_view_controller implements ActionListener, ChangeListener{
     private m_Main_view view;
-    private m_main_view_model model;
     private JButton jButton;
     private JTabbedPane jTabbedPane ;
     private JTable jTable;
-    private m_movie_info_regis_model m_movie_info_regis_model;
+    private m_movie_info_regis_model model;
     public m_main_view_controller(JButton jButton) {
         this.jButton = jButton;
     }
@@ -48,7 +47,7 @@ public class m_main_view_controller implements ActionListener, ChangeListener{
         this.jTable=jTable;
     }
 
-    public m_main_view_controller(m_Main_view view, m_main_view_model model) {
+    public m_main_view_controller(m_Main_view view, m_movie_info_regis_model model) {
        this.view=view;
        this.model=model;
        this.view.setaddActionListener(this);

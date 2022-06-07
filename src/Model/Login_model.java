@@ -66,7 +66,7 @@ public class Login_model {
         try {
             if (DBConnection.getInstance().Initailize()) {
             SQL = "select password FROM user WHERE user_id = '" + id + "' and name = '" +name+"'";
-             System.out.println(SQL);
+             //System.out.println(SQL);
             st = dbconnection.getInstance().getConnection().createStatement();
             rs = st.executeQuery(SQL);
             System.out.println(rs.isBeforeFirst()+ "3");

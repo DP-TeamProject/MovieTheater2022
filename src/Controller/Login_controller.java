@@ -27,7 +27,6 @@ import Model.m_main_view_model;
 import Model.Login_model;
 import View.*;
 import View.Sign_up;
-import View.m_Coupon_regis;
 
 /**
  *

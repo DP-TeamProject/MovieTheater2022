@@ -29,7 +29,6 @@ import Model.food_model;
 import Model.m_movie_info_regis_model;
 import Model.u_main_model;
 import View.Login;
-import View.m_Coupon_regis;
 import View.u_Food_view;
 import View.u_Main_view;
 

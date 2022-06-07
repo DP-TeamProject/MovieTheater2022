@@ -1,72 +1,119 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-import java.sql.SQLException;
-//import java.sql.Statement;
-/**
- *
- * @author tjdck
- */
+
+import Model.Strategy.Adult;
+import Model.Strategy.SF_movie;
+import Model.Strategy.Comedy_movie;
+import Model.Strategy.Romance_movie;
+import Model.Strategy.All;
+import Model.Strategy.movie;
+import Model.Strategy.Action_movie;
+import Model.Strategy.Scary_movie;
+import Model.Strategy.Youth;
+import static Model.DBConnection.dbconnection;
+import java.sql.*;
+import java.util.Random;
+import javax.swing.JOptionPane;
+
 public class m_movie_info_regis_model {
-    int number;
-    String moviename;
+
+    movie m = new movie();
+    String title;
     String runtime;
-    int age;
-    String dirctor;
+    String director;
     String actor;
-    String category;
-    String releaseday;
-    PreparedStatement pstmt = null;
-    public  m_movie_info_regis_model(String moviename){
-            this.moviename=moviename;
+    String genre;
+    String openingdate;
+    String age;
+    int number;
+    int movienum;
+
+    private Connection con = null;
+    private Statement st = null;
+    private ResultSet rs = null;
+
+    String SQL = null;
+
+    public m_movie_info_regis_model(String title) {
+        this.title = title;
     }
-    public  m_movie_info_regis_model(String moviename, String runtime, String age,String dirctor,String actor,String category,String releaseday){
-        this.actor=actor;
-        this.age=Integer.parseInt(age);
-        this.category=category;
-        this.dirctor=dirctor;
-        this.runtime=runtime;
-        this.releaseday=releaseday;
-        System.out.println("실행");
+
+    public m_movie_info_regis_model() {
+
     }
-    public void appendMovie() {
-		//int id = -1;
-		//Statement statement = null;
-		//ResultSet rs = null;
-		try {
-                         String SQL = "insert into customers(moviename, runtime, age, dirctor, actor,category,releaseday) values(?, ?, ?, ?, ?,?,?)";
-                         
-                            pstmt.setString(1, moviename);
-                            pstmt.setString(2, runtime);
-                            pstmt.setInt(3, age);
-                            pstmt.setString(4, dirctor);
-                            pstmt.setString(5, actor);
-                            pstmt.setString(6, category);
-                            pstmt.setString(7, releaseday);
-                            int addrow = pstmt.executeUpdate();
-                            System.out.println("추가된 행의 수 : " + addrow);
-		} catch (SQLException e) {
-			System.out.println("[INSERT 쿼리 오류]\n" + e.getStackTrace());
-                }
-	}
-    public void deleteMovie() {
-		//int id = -1;
-		//Statement statement = null;
-		//ResultSet rs = null;
-		try {
-                         String SQL = "DELETE FROM table WHERE moviename = ?";
-                         pstmt = dbConn.connection.prepareStatement(SQL);
-                            pstmt.setString(1, moviename);
-                            int addrow = pstmt.executeUpdate();
-                            System.out.println("추가된 행의 수 : " + addrow);
-		} catch (SQLException e) {
-			System.out.println("[INSERT 쿼리 오류]\n" + e.getStackTrace());
-                }
-	}
+
+    public void appendMovie(String title, String runtime, String age, String director, String actor, String genre, String openingdate) {
+        Random random = new Random();
+        this.actor = actor;
+        this.age = age;
+        this.genre = genre;
+        this.director = director;
+        this.runtime = runtime;
+        this.openingdate = openingdate;
+        int rand = random.nextInt(300) + 100;
+
+        try {
+            switch (genre) {
+                case "액션":
+                    m = new Action_movie();
+                    break;
+                case "SF":
+                    m = new SF_movie();
+                    break;
+                case "로맨스":
+                    m = new Romance_movie();
+                    break;
+                case "공포":
+                    m = new Scary_movie();
+                    break;
+                case "코미디":
+                    m = new Comedy_movie();
+                    break;
+            }
+            switch (age) {
+                case "ALL":
+                    m.setAge_Limit(new All());
+                    break;
+                case "Youth":
+                    m.setAge_Limit(new Youth());
+                    break;
+                case "Adult":
+                    m.setAge_Limit(new Adult());
+                    break;
+            }
+        
+        SQL = "select * from movie where movie_num = " + rand;
+        st = dbconnection.getInstance().getConnection().createStatement();
+        rs = st.executeQuery(SQL);
+        while (true) {
+            if (rs.isBeforeFirst() == true) {
+                rand = random.nextInt(300) + 100;
+            } else {
+                break;
+            }
+        }
+        SQL = "insert into movie values('" + rand + "','" + director + "','" + actor + "','" +  m.getcategory() + "','" + m.getAge_Limit() + "','" + title + "','" + runtime + "','" + openingdate + "')";
+        con = dbconnection.getConnection();
+        st = con.prepareStatement(SQL);
+        st.executeUpdate(SQL);
+        JOptionPane.showMessageDialog(null, "영화등록이 완료되었습니다.");
+
+    }
+    catch (SQLException e) {
+            System.out.println("[INSERT 쿼리 오류]\n" + e.getStackTrace());
+    }
+}
+
+public void deleteMovie(String movienum) {
+        this.movienum = Integer.parseInt(movienum);
+        try {
+            SQL = "DELETE FROM movie WHERE movie_num =" + movienum;
+            con = dbconnection.getConnection();
+            st = con.prepareStatement(SQL);
+            st.executeUpdate(SQL);
+            JOptionPane.showMessageDialog(null, "영화삭제 완료하였습니다.");
+
+        } catch (SQLException e) {
+            System.out.println("[INSERT 쿼리 오류]\n" + e.getStackTrace());
+        }
+    }
 }
